@@ -2,15 +2,9 @@
 # ESERCIZI CON SQL RUBRICA
 */
 
-select * from contatto
+USE rubrica
 
 SHOW TABLES;
-
-
-select * from over35
-
-select * from recapito
-
 
 
 select * from contatto
