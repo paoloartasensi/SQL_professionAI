@@ -68,5 +68,3 @@ CREATE TABLE banca_lite.tabella_nuova (
     campo1 TEXT, 
     campo2 INTEGER
 );
-
-INSERT INTO banca_lite.aggregata SELECT * FROM cliente
