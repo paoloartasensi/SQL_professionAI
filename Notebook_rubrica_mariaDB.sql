@@ -8,3 +8,11 @@ SHOW TABLES;
 
 
 select * from contatto
+
+
+USE rubrica
+
+
+/*markdown
+
+*/
