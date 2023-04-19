@@ -34,37 +34,26 @@ Numero totale di conti posseduti
 - Importo transato in entrata per tipologia di conto (un indicatore per tipo)
 */
 
-CREATE TABLE aggregata (
-  id_cliente INTEGER, 
-  eta INTEGER, 
-  trans_in INTEGER, 
-  trans_out INTEGER,
-  importo_in FLOAT, 
-  importo_out FLOAT, 
-  qt_conti_tot INTEGER,
-  qt_conti_base INTEGER,
-  qt_conti_business INTEGER,
-  qt_conti_privati INTEGER,
-  qt_conti_famiglie INTEGER,
-  importo_in_base FLOAT,
-  importo_in_business FLOAT,
-  importo_in_privati FLOAT,
-  importo_in_famiglie FLOAT,
-  importo_out_base FLOAT,
-  importo_out_business FLOAT,
-  importo_out_privati FLOAT,
-  importo_out_famiglie FLOAT
-  
-);
-
-
-
-SELECT * FROM aggregata;
-
 
 --DROP Table aggregata
 
-CREATE TABLE banca_lite.tabella_nuova (
-    campo1 TEXT, 
-    campo2 INTEGER
-);
+/*markdown
+CTE (Common Table Expressions) in SQL consente di definire una o più espressioni di tabella temporanee all'interno di una query SELECT, INSERT, UPDATE o DELETE.
+
+In pratica, una CTE fornisce un modo per creare una query complessa suddividendo il lavoro in passaggi logici separati.
+
+La sintassi generale di una CTE è la seguente:
+
+WITH nome_cte (colonna1, colonna2, colonna3, ...) AS ( SELECT colonna1, colonna2, colonna3, ... FROM nomi_tabelle WHERE condizioni )
+
+Segue una SELECT statement che si riferisce al nome della CTE specificato nella parte superiore della query.
+
+Ad esempio, ecco come potresti utilizzare una CTE per ottenere il conteggio dei clienti che hanno effettuato acquisti in un certo periodo di tempo:
+
+WITH clienti_ordini AS ( SELECT DISTINCT customer_id FROM orders WHERE order_date BETWEEN '2020-01-01' AND '2020-12-31' ) SELECT COUNT(*) as num_clienti FROM clienti_ordini;
+
+In questo codice, abbiamo creato una CTE chiamata "clienti_ordini" che seleziona tutti i customer_id distinti degli ordini effettuati nel 2020. La query principale quindi conta il numero di righe nella CTE, che rappresenta il numero di clienti distinti che hanno effettuato acquisti in tale periodo.
+
+Le CTE possono semplificare le query complesse e migliorare la leggibilità e la manutenzione del codice, anche se è importante notare che ogni volta che viene utilizzata una CTE, il DBMS deve valutarla come una subquery separata.
+*/
+

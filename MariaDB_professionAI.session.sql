@@ -1,2 +1,2 @@
-USE banca;
-SELECT * FROM banca.transazioni;
+USE banca_lite;
+SELECT * FROM cliente;
