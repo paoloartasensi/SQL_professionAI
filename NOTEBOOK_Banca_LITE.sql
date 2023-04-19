@@ -79,8 +79,10 @@ GROUP BY c.id_cliente;
 
 -- 6) Numero di conti per cliente
 SELECT id_cliente, COUNT(id_conto) AS Num_tot_conti
-FROM conto
+FROM conto 
 GROUP BY id_cliente;
+
+-- PARE CHE IL CLIENTE con ID 0 non sia REGISTRATO NELLA TABELLA "CONTO"
 
 -- 7) Numero di conti posseduti per tipologia (un indicatore per tipo)
 
